@@ -1,0 +1,276 @@
+body{
+	background-color: #EEEEEE;
+	font-family: 'Roboto', sans-serif;
+}
+
+textarea{
+	padding:10px;
+	box-sizing: border-box;
+}
+
+input{
+	box-sizing: border-box;
+}
+
+
+#add_project_form{
+	padding : 20px;
+	margin:20px;
+	padding-top : 40px;
+	margin-top : 0;
+	background-color : white;
+}
+
+#project_fields{
+	display:inline-block;
+		/*min-width:400px;*/
+	width:30%;
+	vertical-align: top;
+	margin-right:50px;
+	border:0.5px solid #c4bcbc;
+	padding-bottom:20px;
+	border-radius : 5px;
+	display:inline-block;
+
+}
+.project_field{
+	width:80%;
+	margin:auto;
+	
+}
+
+#project_name{
+	height:40px;
+	line-height:30px;
+	padding:5px;
+}
+
+#add_project_form label{
+	display:block;
+	margin-top:20px;
+}
+
+#project_description{
+	height:400px;
+	width:100%;
+	/*
+	min-width:300px;		
+	
+	*/
+}
+
+#project_name{
+	width:100%;
+	max-width:300px;	
+}
+
+#project_visibility{
+	height:30px;
+	margin-top:20px;
+	margin-left:10%;
+}
+
+.right{
+	display : inline-block;
+	width : 60%;
+}
+
+.adresses{
+	display : block;
+	text-align : left;
+	width : 80%;
+	margin-bottom : 10px;
+}
+
+.adresses .project_field{
+	margin-left : 0;
+	margin-top : 0;
+	
+}
+
+#project_repdev{
+	width : 80%;
+	height : 30px;
+}
+
+#project_repdemo{
+	width : 80%;
+	height : 30px;
+	
+}
+
+
+#US_fields{
+	border-top : 0.5px solid #c4bcbc;
+	display:inline-block;
+	width:100%;
+	vertical-align: top;
+}
+
+#US_table {
+	margin-top : 15px;
+	width:100%;
+	padding:20px;	
+	 border-collapse: collapse;
+}
+
+#US_table tr{
+	border-bottom:1px solid #c4bcbc;
+}
+
+#US_table td,#US_table th{
+	padding-bottom:10px;
+	padding-top:5px;
+}
+
+#US_table input{
+	width:100%;
+}
+
+.US_td{
+	width:50px;
+	padding:10px;
+}
+
+.US_description{
+	display:block;
+	width:90%;
+	margin:auto;
+}
+
+.clickable{	
+	background-color:#1abc9c;
+	color:white;
+	border-radius:5px;
+	margin-top:20px;
+	font-size:large;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.clickable a{
+	text-decoration:none;
+	color:white;
+}
+
+#add_US_button{
+	
+	width:150px;
+	height:25px;
+	border : none;
+	font-size : 70%;
+}
+ #add_project_submit{
+	 width:150px;
+	 height:40px;
+	 border : none;
+	 
+	 margin-bottom:20px;
+ }
+ 
+ #cancel{
+	 margin-left:20px;
+	padding:10px;
+	height:40px;
+	width:100px;
+	
+ }
+ 
+ #cancel a{
+	text-decoration:none;
+	color:#1abc9c; 
+ }
+
+/*----------------------------------------------------------------------------*/
+/* Top bar ------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+
+.projet{
+	z-index : 1000;
+	margin-top : 0;
+	width : 100%;
+	height : 50px;
+	position : fixed;
+	background-color : white;
+	border-bottom : 0.5px solid black;
+}
+
+.projet .logo{
+	display : inline-block;
+	border-right : 0.5px solid black;
+	width : 130px;
+	height : 100%;
+	margin-top : 0;
+	vertical-align : top;
+}
+
+.projet .logo a img{
+	margin-top : 2px;
+	margin-left : 15px;
+}
+
+
+.projet .title{
+	display : inline-block;
+	margin-left : 20px;
+	margin-top : 2.5px;
+	height : 45px;
+	border-radius : 5px;
+	background-color : #1abc9c;
+}
+
+.projet .title h1{
+	display : inline-block;
+	font-family: 'Roboto', sans-serif;
+	font-size : 110%;
+	font-style : none;
+	margin-bottom : 5px;
+	margin-right : 30px;
+	margin-left : 10px;
+	color : white;
+}
+
+.projet .title a{
+	height : 100%;
+}
+
+.projet .title a img{
+	display : inline-block;
+	float : right;
+	margin-right : 5px;
+	margin-top : 7.5px;
+}
+
+
+.projet .pseudo{
+	display : inline-block;
+	float : right;
+	height : 100%;
+	width : 150px;
+	background-color : #1abc9c;
+}
+
+.projet .pseudo p{
+	font-family: 'Roboto', sans-serif;
+	display : inline-block;
+	font-size : 100%;
+	height : 100%;
+	line-height: 100%; /* hauteur de ligne (identique) */
+	white-space: nowrap; /* interdiction de passer à la ligne */
+	font-style : none;
+	color : white;
+	margin-left : 15px;
+	vertical-align : top;
+}
+
+.projet .pseudo a{
+	display : inline-block;
+	height : 100%;
+	width : 50%;
+	padding-top : 10px;
+}
+
+.projet .pseudo a img{
+	display : inline-block;
+	float : right;
+}
