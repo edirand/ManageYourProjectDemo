@@ -1,0 +1,128 @@
+/*----------------------------------------------------------------------------*/
+/* Container ------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+body{
+	background-color: #EEEEEE;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenu {
+	margin-top : 30px;
+	margin-left : 30px;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Popup ------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+#pop_background{
+	position : fixed;
+	width : 100%;
+	height : 100%;
+	top : 0;
+	left : 0;
+	background : #000;
+	opacity : .8;
+	z-index : 1000;
+	cursor : pointer;
+	display : none;
+}
+
+#pop_box{
+	position : absolute;
+	background : #fff;
+	width : 50%;
+	height : 60%;
+	margin : 10% 0 0 25%;
+	padding : 20px;
+	z-index : 1500;
+	display : none;
+}
+
+#recherche{
+	width : 99%;
+	height : 30px;
+}
+
+#Resultat .collaborateurs{
+	margin-top : 10px;
+	width : 99%;
+	height : 300px;
+	border : 1px solid black;
+	background-color : white;
+	overflow : auto;
+}
+
+#Resultat .collaborateurs a .personne{
+	width : 100%;
+	display : block;
+	border-bottom : 0.5px solid black;
+}
+
+#Resultat .collaborateurs a .personne .name{
+	margin-left : 10px;
+	text-align : left;
+	display : inline-block;
+}
+
+#Resultat .collaborateurs a .personne .name h1{
+	color : #1C2942;
+	font-size : 100%;
+}
+
+#Resultat .collaborateurs a .personne a{
+	float : right;
+	margin-right : 30px;
+	margin-top : 20px;
+}
+
+#Resultat .collaborateurs a .personne .footer{
+	text-align : left;
+	margin-left : 25px;
+	margin-bottom : 10px;
+}
+
+
+/*----------------------------------------------------------------------------*/
+/* Tableau des collaborateurs du projet -----------------------------*/
+/*----------------------------------------------------------------------------*/
+.contenu{
+	margin-left : 60px;
+	margin-top : 60px;
+}
+
+#membres .collaborateurs{
+	margin-top : 10px;
+	width: 90%;
+	height : 300px;
+	border : 1px solid black;
+	background-color : white;
+	overflow : auto;
+}
+
+#membres .collaborateurs .personne{
+	width : 100%;
+	display : block;
+	border-bottom : 0.5px solid black;
+}
+
+#membres .collaborateurs .personne .name{
+	margin-left : 10px;
+	text-align : left;
+	display : inline-block;
+}
+
+#membres .collaborateurs .personne .name h1{
+	color : #1C2942;
+	font-size : 100%;
+}
+#membres .collaborateurs .personne a{
+	float : right;
+	margin-right : 30px;
+	margin-top : 20px;
+}
+
+#membres .collaborateurs .personne .footer{
+	text-align : left;
+	margin-left : 25px;
+	margin-bottom : 10px;
+}
