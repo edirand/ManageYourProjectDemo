@@ -1,0 +1,6 @@
+ErrorDocument 404 /ManageYourProjectDev/src/web/erreur404.php
+#  cette ligne devrait être là si le mod_rewrite est utilisé
+RewriteEngine On
+#  l'ordre d'importance est de gauche à droite, le premier fichier
+#  à être lu étant à gauche
+DirectoryIndex login.php index.php index.html
