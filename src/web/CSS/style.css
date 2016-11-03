@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background:#EEEEEE;
+}
+
+.form-signin {
+	max-width: 500px;
+	padding: 19px 29px 29px;
+	margin: 0 auto;
+	//margin-top:90px;
+	background-color: #fff;
+	
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	
+	font-family: "Roboto", sans-serif;
+}
+
+.form-signin .form-signin-heading{
+	color:#1abc9c;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"],
+.form-signin input[type="email"] {
+	font-size: 16px;
+	height: 45px;
+}
+
+.signin-form, .body-container
+{
+	margin-top:110px;
+}
+.navbar-brand{
+	font-family: "Roboto", sans-serif;
+}
+#btn-submit{
+	height:45px;
+	background-color :#1abc9c;
+}
+.h5{
+	font-family: "Roboto", sans-serif;
+}
+h1{
+	font-family: "Roboto", sans-serif;
+}
+
+.form-signin h2{
+	text-align : center;
+}
+
+.btn-primary {
+	color:white;
+	background-color:#1abc9c;
+	border-color:#1abc9c
+	font-family: "Roboto", sans-serif;
+}
+
+.btn-sec {
+	color:#1abc9c;
+	background-color:white;
+	border : none;
+	vertical-align : bottom;
+	padding : 0;
+	font-family: "Roboto", sans-serif;
+	text-decoration : underline;
+}
+
+label{
+	color : #37474F;
+}
+
+label a{
+	color: #1abc9c;
+}
+
+.form-group {
+	margin-bottom:15px
+}
+
+.form-group .form-control{
+	width : 100%;
+	padding : 0px;
+	margin: 0px;
+}
+
+.form-group .btn-primary{
+	width : 100px;
+	color:white;
+	background-color:#1abc9c;
+	border-radius : 5px;
+	border : none;
+	height : 40px;
+	font-size : 90%
+	padding : 0;
+	text-align : center;
+}
+
+.alert-danger{
+	color : #37474F;
+	margin-bottom : 5px;
+}
+
+.alert-info{
+	color : #37474F;
+	margin-bottom : 5px;
+}
