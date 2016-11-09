@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS Log
 (id int unsigned not null auto_increment primary key,
 membre_id int unsigned not null,
 element_modif varchar(512),
-date_modif date,
+date_modif datetime,
 projet_id int unsigned not null,
 FOREIGN KEY (membre_id) REFERENCES Membres(id) ON DELETE cascade,
 FOREIGN KEY (projet_id) REFERENCES Projets(id) ON DELETE cascade

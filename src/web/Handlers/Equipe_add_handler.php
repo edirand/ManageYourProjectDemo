@@ -20,8 +20,8 @@
 		
 		$bdd->exec('Insert into Developpeurs(membre_id, projet_id) Value(' . $id . ',' . $_SESSION['projet_id'] . ')');
 		
-		$today = date("Y-m-d");
-		$bdd->exec('Insert into Log(membre_id, element_modif, date_modif, projet_id) Value(' . $id . ', " a ajouté un membre à l\'équipe", "'. $today . '", ' . $_SESSION['projet_id'] . ')');
+		$today = date("Y-m-d H:i:s");
+		$bdd->exec('Insert into Log(membre_id, element_modif, date_modif, projet_id) Value(' . $_SESSION[user_session] . ', " a ajouté un membre à l\'équipe", "'. $today . '", ' . $_SESSION['projet_id'] . ')');
 		
 		echo 'Ce membre a bien été ajouté au projet';
 		$reponse->closeCursor();

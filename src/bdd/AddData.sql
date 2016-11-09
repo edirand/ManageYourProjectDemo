@@ -85,6 +85,6 @@ du fonctionnement de la démo avant de commiter.\nLes dépôts doivent suivre ce
 - Sources SQL : /src/bdd/", "Le code fournit doit obtenir au minimum une note de B", 1);
 
 INSERT INTO Log(membre_id, element_modif, date_modif, projet_id) VALUES
-(1, "a modifié le KanBan", "2016-10-24", 1),
-(2, "a ajouté un développeur", "2016-10-22", 1),
-(3, "a supprimé un développeur", "2016-10-23", 1);
+(2, "a modifié le KanBan", "2016-10-24 10:02:01", 1),
+(2, "a ajouté un développeur", "2016-10-22 10:20:56", 1),
+(3, "a supprimé un développeur", "2016-10-23 02:34:23", 1);

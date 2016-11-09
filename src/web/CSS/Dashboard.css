@@ -96,7 +96,6 @@ body{
 	display : inline-block;
 	float : right;
 	height : 100%;
-	width : 150px;
 	background-color : #1abc9c;
 }
 
@@ -116,7 +115,6 @@ body{
 .projet .pseudo a{
 	display : inline-block;
 	height : 100%;
-	width : 50%;
 	padding-top : 10px;
 }
 

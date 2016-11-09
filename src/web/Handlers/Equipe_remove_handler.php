@@ -19,8 +19,8 @@
 		
 		$bdd->exec('Delete from Developpeurs where membre_id = ' . $id . ' AND projet_id = '. $_SESSION['projet_id'] );
 		
-		$today = date("Y-m-d");
-		$bdd->exec('Insert into Log(membre_id, element_modif, date_modif, projet_id) Value(' . $id . ', " a supprimé un membre de l\'équipe", "'. $today . '", ' . $_SESSION['projet_id'] . ')');
+		$today = date("Y-m-d H:i:s");
+		$bdd->exec('Insert into Log(membre_id, element_modif, date_modif, projet_id) Value(' . $_SESSION['user_session'] . ', " a supprimé un membre de l\'équipe", "'. $today . '", ' . $_SESSION['projet_id'] . ')');
 		
 		
 		echo 'Ce membre a bien été supprimé du projet';

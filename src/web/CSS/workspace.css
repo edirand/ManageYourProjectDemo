@@ -135,11 +135,11 @@ li{
 
 #projects_display{
 	border : 0.5px solid black;
-	
+	height : 420px;
 	border-radius : 5px;
 	text-decoration : none;
-	overflow : auto;
-	
+	overflow : scroll;
+
 	margin-top:10px;
 }
 
@@ -147,10 +147,12 @@ li{
 	padding:0px;
 	margin-bottom:0px;
 	margin-top : 0;
+
 }
 
 
 #projects_display_list li a{
+	overflow : scroll;
 	font-style : none;
 	text-decoration : none;
 	color:black;
@@ -248,7 +250,6 @@ li{
 	display : inline-block;
 	float : right;
 	height : 100%;
-	width : 150px;
 	background-color : #1abc9c;
 }
 
@@ -268,7 +269,6 @@ li{
 .projet .pseudo a{
 	display : inline-block;
 	height : 100%;
-	width : 50%;
 	padding-top : 10px;
 }
 

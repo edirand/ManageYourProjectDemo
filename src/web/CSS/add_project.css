@@ -1,6 +1,7 @@
 body{
 	background-color: #EEEEEE;
 	font-family: 'Roboto', sans-serif;
+	margin:0px;
 }
 
 textarea{
@@ -161,11 +162,10 @@ input{
 	font-size : 70%;
 }
  #add_project_submit{
-	 width:150px;
-	 height:40px;
-	 border : none;
-	 
-	 margin-bottom:20px;
+	
+	height:40px;
+	border : none;	 
+	margin-bottom:20px;
  }
  
  #cancel{
@@ -246,7 +246,6 @@ input{
 	display : inline-block;
 	float : right;
 	height : 100%;
-	width : 150px;
 	background-color : #1abc9c;
 }
 
@@ -266,7 +265,6 @@ input{
 .projet .pseudo a{
 	display : inline-block;
 	height : 100%;
-	width : 50%;
 	padding-top : 10px;
 }
 

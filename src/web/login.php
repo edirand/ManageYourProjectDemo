@@ -65,7 +65,7 @@
 </div>
 
 <div class="form-group">
-<input type="text" class="form-control" name="txt_uname_email" placeholder="Login ou email" required />
+<input type="text" class="form-control" name="txt_uname_email" placeholder="Login ou email" />
 <span id="check-e"></span>
 </div>
 

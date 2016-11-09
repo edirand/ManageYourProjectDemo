@@ -94,6 +94,7 @@ function display_projects(projects_list, visibility, state){
 }
 
 function set_last(){
+	$("#last_element").attr("id","");
 	$("#projects_display_list li").last().attr("id","last_element" );
 	
 }

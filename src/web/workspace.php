@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("Handlers/projects/get_projects.php");
-	$projects = get_projects(10);
+	$projects = get_projects(10,$_SESSION['login']);
 	
 	include("Handlers/projects/get_logs.php");
 	$logs = get_logs();
@@ -76,19 +76,7 @@
 						
 						$display =  '<li class="project_element" data-visibility="'.$visibility.'" data-state="'.$state.'">
 										<a href="Handlers/projects/open_project.php?title='.$name.'">'.$name.'</a>
-									</li>';		
-						/*
-						if($count++ <$len-1){
-							$display =  '<a href="Handlers/projects/open_project.php?title='.$name.'">
-										<li class="project_element" data-visibility="'.$visibility.'" data-state="'.$state.'">'.$name.'</li>
-										</a>';					
-						}
-						else{
-							$display =  '<a href="Handlers/projects/open_project.php?title='.$name.'">
-										<li class="project_element" id="last_element" data-visibility="'.$visibility.'" data-state="'.$state.'">'.$name.'</li>
-										</a>';					
-						}						
-						*/
+									</li>';								
 						
 						echo $display;
 					}	
@@ -112,8 +100,7 @@
 		
 				$display =
 				'<div class = "log"><div class = "message">' . $member . ' ' . $content .'</div><div class ="footer">' . $date . ' '. $project . '</div></div>';
-				echo $display;
-		
+				echo $display;		
 			}
 			?>
 		</div>
