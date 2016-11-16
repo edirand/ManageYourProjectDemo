@@ -85,3 +85,57 @@ Delete from Developpeurs where membre_id = ? AND projet_id = ?;
 #Selectionne tous les membres participants au projet
 Select login, mail from Membres where id in
 (Select membre_id from Developpeurs where projet_id = ?);
+
+######################Sprint 2 :########################
+#Récupère la matrice de traçabilité
+Select id, numero, commit_id from UserStory where projet_id = ?;
+
+#Enregistre le commit d'un US validée
+Update UserStory
+Set commit_id = ?
+where id = ? and projet_id = ?;
+
+#Ajoute un sprint
+Insert into Sprints(numero, date_debut, date_fin, projet_id) Value
+(?, ?, ?, ?);
+
+#Assigne une US à un sprint
+Update UserStory
+Set sprint_id = ?
+where id = ?;
+
+
+##############Burndownchart###################
+#Récupère la liste des sprints du projet
+Select * from Sprints where projet_id = ?;
+
+#Calcule les efforts réels et les efforts prévisionnels de chaque sprint
+Select * from
+((Select Sum(effort) from UserStory where sprint_id = ?)as effort_prevu,
+(Select Sum(effort) from UserStory where sprint_id = ? and commit_id is not null)as effort_reel
+);
+##############################################
+
+#Ajoute une tache
+INSERT INTO Taches(numero, description, cout, etat, date_debut, date_fin, sprint_id,
+us, developpeur_id, dependances) VALUE
+(?, ?,?, ?, ?, ?, ? , ?, ?, ?);
+
+#Récupère les taches d'un sprint
+select * from Taches where sprint_id = ?;
+
+#Affiche la doc d'un projet
+select * from Doc where projet_id = ?;
+
+#Modifie la doc d'un projet
+Update Doc
+Set adresse_dev = ?,
+adresse_demo = ?, 
+politique_tests = ?, 
+langages_outils = ?, 
+regles_depot = ?, 
+regles_qualite = ?
+where projet_id = ?;
+
+#Compte le nombre de sprints du projet.
+Select Count(*) from Sprints where projet_id = ?;

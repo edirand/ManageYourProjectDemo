@@ -18,10 +18,12 @@
 
 	while ($donnees = $reponse->fetch())
 	{
-		echo '<a href="#" onclick = "descSprint(' . $donnees['numero'] . '); ; changeColor(' . $nbSprints['count(*)'] . ',' . $donnees['numero'] . ')"><li id = "sprint'.$donnees['numero'].'">Sprint #'.$donnees['numero'].'</li></a>';
+		echo '<a href="#" onclick = "descSprint(' . $donnees['id'] . '); ; changeColor(' . $nbSprints['count(*)'] . ',' . $donnees['numero'] . ')"><li id = "sprint'.$donnees['numero'].'">Sprint #'.$donnees['numero'].'</li></a>';
 
 	}
-	echo '<a href="Sprint.php"><img src = "Icons/add-sprint.png" height = "30px" width = "30px"></a>';
+	//Empêche la planification de sprint pour les visiteurs
+	if ($_SESSION['user_session']!=1){
+		echo '<a href="Handlers/Sprints/initialize_session.php"><img src = "Icons/add-sprint.png" height = "30px" width = "30px"></a>';}
 	echo'</ul>';
 	echo '<script>changeColor(' .$nbSprints['count(*)'] .', 0);</script>';
 	$reponse->closeCursor();

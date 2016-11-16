@@ -37,7 +37,7 @@
 <ul>
 <li id="nav-equipe"><a href="Equipe.php" onclick="changeColor('nav-equipe', 'equipe')" target="corps"><img id="equipe" src="icons/equipe.png" title="Equipe" alt="Equipe" height = "32px" width = "32px"/></a></li>
 <li id="nav-graphe" ><a href="graphe.php" onclick="changeColor('nav-graphe', 'graphe')" target="corps"><img id="graphe" src="icons/graphe.png" title="Statistiques" alt="Graphes" height = "32px" width = "32px"/></a></li>
-<li id="nav-doc"><a href="doc.php" onclick="changeColor('nav-doc', 'docs')" target="corps"><img id="docs" src="icons/docs.png" title="Documentation" alt="Documentation" height = "32px" width = "32px"/></a></li>
+<li id="nav-doc"><a href="documentation.php" onclick="changeColor('nav-doc', 'docs')" target="corps"><img id="docs" src="icons/docs.png" title="Documentation" alt="Documentation" height = "32px" width = "32px"/></a></li>
 <li id="nav-param"><a href="Parametres.php" onclick="changeColor('nav-param', 'param')" target="corps"><img id="param" src="icons/param.png" title="Paramètres" alt="Paramètres" height = "32px" width = "32px"/></a></li>
 <li id="nav-home"><a href="Projet.php" target="corps" onclick="changeColor('nav-home', 'home')"><img id="home" src="icons/home.png" title="Accueil" alt="Home" height = "32px" width = "32px"/></a></li>
 </ul>

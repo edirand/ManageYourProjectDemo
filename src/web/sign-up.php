@@ -64,6 +64,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ManageYourProject : Inscription</title>
 <link rel="stylesheet" href="CSS/style.css" type="text/css"  />
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
 

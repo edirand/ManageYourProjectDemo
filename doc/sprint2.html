@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>	
+	<meta charset="UTF-8">
+		
+	<title> Spint 2</title>
+	
+	<link href="doc.css" rel="stylesheet" media="screen">
+    </head>
+
+    <body>
+	
+	<h1> Sprint 2 : 7/11 - 18/11</h1>
+	
+	<section id="user_stories">
+		<h2>Rappel des US</h2>
+		<ul>
+			<li>US7 : En  tant  que  dev/visiteur,  je  souhaite  pouvoir  consulter  l'avancement  des US validées.</li>
+			<li>US8 : En tant que dev, je souhaite pouvoir planifier un sprint (backlog).</li>
+			<li>US10 : En tant que dev/visiteur, je souhaite pouvoir consulter l'avancement des sprints (burndown chart).
+			</li>	
+			<li>US11 : En tant que dev, je souhaite pouvoir ajouter une tâche à un sprint.</li>
+			<li>US12 : En tant que dev, je souhaite pouvoir établir la planification et les dépendances des tâches (PERT).
+			</li>
+			<li>US14 : En tant que dev, je souhaite pouvoir établir les règles d’utilisation des dépôts.</li>
+			<li>US15 : En tant que dev/visiteur, je souhaite pouvoir consulter les règles d’utilisation des dépôts.</li>
+			<li>US16 : En  tant  que  dev,  je  souhaite  pouvoir  définir  les  outils  de  programmation qui seront utilisés</li>
+
+			
+		</ul>
+	</section>
+	
+	<section id="tasks">
+		<h2> Rappel des tâches</h2>
+		<ol>
+				<li> Créer les requêtes nécessaires</li>
+				<li> Créer une page graphe permettant d’afficher une matrice de traçabilité contenant la liste des US du projet.</li>
+				<li> Ajouter une fonctionnalité de mise à jour de la matrice de traçabilité directement sur la page graphe (ne  fonctionnant que si on est développeur du projet).</li>
+				<li> Créer la page 'Ajouter un sprint' permettant de créer un sprint en définissant sa date de début, sa date de fin et les US à traiter.</li>
+				<li> Modifier la page graphe pour afficher un burndownchart calculé automatiquement.</li>
+				<li>Modifier la page 'Ajouter un sprint' pour pouvoir créer une liste de tâches en sélectionnant l'US correspondante, la durée de la tâche en jours homme et la dépendance de cette tâche.</li>
+				<li>Afficher la liste des tâches sur la page 'Projet', dans l'onglet du sprint correspondant.</li>
+				<li>Modifier la page Graphe pour afficher un diagramme de PERT, calculé à partir des US validées dans la matrice de traçabilité.</li>
+				<li>Créer la page 'Documentation' permettant d’afficher les règles d’utilisation des dépôts.</li>
+				<li>Ajouter une fonction Modifier dans la page 'Documentation' permettant de modifier les règles d’utilisation des dépôts.</li>
+				<li>Ecrire les tests de validation.</li>	
+				<li>Exécuter les tests de validation.</li>
+		</ol>
+	
+	</section>
+	<h2> KanBan </h2>
+	<section id ="kanban">
+		<table id="kanban_table" >
+			<tr>
+				<td> </td>
+				<td>Todo</td>
+				<td>OnGoing</td>
+				<td>Done</td>
+			</tr>
+			<tr>
+				<td> ALL </td>
+				<td> 
+					<ul class="todo">
+					<li> T11 - Laala </li>
+					<li> T12 - Laala </li>
+					
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+						<li> T1 - Emilien </li>
+					</ul>
+				</td>
+			</tr>	
+			<tr>
+					<td> US7 </td>
+					<td>
+						<ul class="todo">							
+							
+							
+						</ul>
+					</td>
+					<td>
+						<ul class="ongoing">
+							<li> T3 - Laala </li>
+						</ul>
+					</td>
+					<td>
+						<ul class="done">
+							<li> T2 - Laala </li>
+						</ul>
+					</td>
+			</tr>	
+			<tr>
+					<td> US8, US11 </td>
+					<td>
+						<ul class="todo">							
+							<li> T7 - Emilien </li>
+						</ul>
+					</td>
+					<td>
+						<ul class="ongoing">
+						</ul>
+					</td>
+					<td>
+						<ul class="done">
+							<li> T4 - Emilien </li>
+							<li> T6 - Emilien </li>
+						</ul>
+					</td>
+			</tr>	
+			</tr>	
+			<tr>
+					<td> US10 </td>
+					<td>
+						<ul class="todo">							
+							<li> T5 - Laala </li>							
+						</ul>
+					</td>
+					<td>
+						<ul class="ongoing">
+							
+						</ul>
+					</td>
+					<td>
+						<ul class="done">
+							
+						</ul>
+					</td>
+			</tr>
+			<tr>
+					<td> US12 </td>
+					<td>
+						<ul class="todo">							
+							
+						</ul>
+					</td>
+					<td>
+						<ul class="ongoing">
+							<li> T8 - Samuel </li>							
+						</ul>
+					</td>
+					<td>
+						<ul class="done">
+							
+						</ul>
+					</td>
+			</tr>
+			<tr>
+					<td> US14, US15, US16 </td>
+					<td>
+						<ul class="todo">							
+							
+							<li> T10 - Samuel </li>
+
+						</ul>
+					</td>
+					<td>
+						<ul class="ongoing">
+							<li> T9 - Samuel </li>
+						</ul>
+					</td>
+					<td>
+						<ul class="done">
+
+						</ul>
+					</td>
+			</tr>			
+
+	
+		</table>
+		
+		
+		
+	</section>
+
+
+    </body>
+
+</html>
