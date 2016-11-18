@@ -21,14 +21,13 @@
 </div>
 <div class="popup" id = "popup">
 <div class = "corps">
-Tache n°1
 <div class = "p_partie">
 <div class = "p_titre">
 Description
 </div>
 <div class = "p_content">
 <p>Ajoutez une description de la tâche.</p>
-<textarea name="desc" rows="10" cols="120" id = "description"></textarea>
+<textarea name="desc" rows="10" cols="115" id = "description"></textarea>
 </div>
 </div>
 <div class = "p_partie">
@@ -180,11 +179,11 @@ $(document).ready(function() {
 									   usL='"';
 									   $(".checkboxUs:checked").each(function(){
 																	 if(premier){
-																	 usL += (parseInt($(this).val())+1);
+																	 usL += (parseInt($(this).val()));
 																	 premier = false;
 																	 }
 																	 else{
-																	 usL += ','+(parseInt($(this).val())+1);}
+																	 usL += ','+(parseInt($(this).val()));}
 																	 $(this).attr("checked",false);
 																	 });
 									   usL +='"';

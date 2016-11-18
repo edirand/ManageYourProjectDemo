@@ -21,12 +21,14 @@
 	
 	$donnees = $reponse->fetch();
 	$id = $donnees['id'];
-
+	$today = date("Y-m-d H:i:s");
+	$bdd->exec('Insert into Log(membre_id, element_modif, date_modif, projet_id) Value(' . $_SESSION['user_session'] . ', " a planifié un nouveau sprint", "'. $today . '", ' . $_SESSION['projet_id'] . ')');
 	$reponse->closeCursor();
 	$bdd = null;
 	
 	$test->enregistrerAllTaches($id, $_SESSION['projet_id']);
 	$test->enregistrerUsChoisies($id, $_SESSION['projet_id']);
+	
 	//Enregistrement terminé, on passe au réinitialise
 	//header('Location: reinitialize_session.php');
 	//exit;

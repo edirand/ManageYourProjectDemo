@@ -60,6 +60,7 @@ hiddenRequetes{
 	margin-left : 30px;
 	width : 25%;
 	text-align : left;
+	vertical-align : top;
 }
 
 .note{
@@ -80,10 +81,12 @@ hiddenRequetes{
 }
 
 .note .noteCorps{
-	min-height : 230px;
+	height : 230px;
+	overflow : auto;
 }
 
 .note .noteFooter{
+	margin-top : 5px;
 	float : right;
 }
 
