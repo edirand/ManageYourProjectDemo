@@ -1,0 +1,46 @@
+#pert_section{
+	margin-left : 60px;
+	background-color : #EEEEEE;
+	margin-bottom:100px;
+}
+
+.pert_table{
+	border : 1px solid black;
+	border-collapse: collapse; 
+}
+
+.pert_table th{
+	border : 1px solid black;
+}
+
+.pert_table td:not(.row_head){
+	border:1px solid black;
+}
+
+.row_head {
+ border : 1px solid black;
+}
+
+.pert_table th, .pert_table td{
+	width:50px;
+	height:50px;
+}
+
+.dependency{
+	background-color:red;
+}
+
+.display_pert{
+	border : 1px solid black;
+	width : 90%;
+	padding : 20px;
+	background-color : white;
+}
+.button_sprint_pert{
+	border : none;
+	background-color: #1abc9c;
+	color:white;
+	padding:5px;
+	border-radius:5px;
+	margin:20px;
+}

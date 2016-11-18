@@ -14,7 +14,7 @@
 	<meta charset="UTF-8">
 	<link href="Css/workspace.css" rel="stylesheet" media="screen">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src = "js/jquery-3.1.1.min.js"></script>
 	<script src="js/workspace.js"></script>
 	
 	<title> Mes projets </title>

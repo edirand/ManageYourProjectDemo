@@ -1,0 +1,105 @@
+/*----------------------------------------------------------------------------*/
+/* Container ------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+body{
+	background-color: #EEEEEE;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenu {
+	margin-top : 60px;
+	margin-left : 60px;
+}
+
+
+
+#container-burndown{
+	display : inline-block;
+	max-width : 45%;
+}
+
+.matrice-tra{
+	display : inline-block;
+	margin-left : 90px;
+	width : 45%;
+	vertical-align : top;
+}
+
+.matrice-corps{
+	max-height : 380px;
+	overflow : auto;
+}
+
+.matrice-tra #matriceH{
+	background-color : white;
+	width : 95%;
+	border-collapse : collapse;
+	
+}
+
+.matrice-tra #matriceH #first{
+	background-color: rgb(55, 71, 79);
+	color : #1abc9c;
+}
+
+.matrice-tra #matriceH #first #usH{
+	text-align : center;
+	width : 10%;
+}
+
+.matrice-tra #matriceH #first #comH{
+	text-align : center;
+}
+
+.matrice-tra #matrice{
+	background-color : white;
+	width : 95%;
+	border-collapse : collapse;
+
+}
+
+.matrice-tra #matrice #first{
+	text-align : center;
+	background-color: rgb(55, 71, 79);
+	color : #1abc9c;
+}
+
+.matrice-tra #matrice tr td{
+	padding-top : 10px;
+	padding-bottom : 10px;
+	border : 1px solid black;
+}
+
+.matrice-tra #matrice tr #numero{
+	text-align : center;
+	width : 10%;
+}
+
+
+.matrice-tra .edit{
+	border : none;
+	color : white;
+	border-radius : 5px;
+	background-color :#1abc9c;
+}
+
+.matrice-tra .but{
+	border : none;
+	color : white;
+	border-radius : 5px;
+	background-color :#1abc9c;
+}
+
+#content{
+	display : inline-block;
+	height : 100%;
+	width : 100%;
+	vertical-align : top;
+}
+#commit-td{
+	text-align: right;
+}
+#save-ic{
+	text-align: right;
+}
+

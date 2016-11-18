@@ -9,7 +9,7 @@
 <head>	
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src = "js/jquery-3.1.1.min.js"></script>
 	<script src="js/add_project.js"></script>
 	<link href="Css/add_project.css" rel="stylesheet" media="screen">	
 	<title> Ajouter un projet </title>

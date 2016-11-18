@@ -72,7 +72,7 @@
 			for($i = 0; $i < sizeof($this->_usRestantes); $i++){
 				echo '<div class="Us">';
 				echo '<table>';
-				echo '<tr><td><input type="checkbox" class="checkboxUs" value ="' . strval($i) . '"></td>';
+				echo '<tr><td><input type="checkbox" class="checkboxUs" value ="' . $this->_usRestantes[$i][0] . '"></td>';
 				echo '<td>';
 				echo '<div class= "UsDesc">US#'.$this->_usRestantes[$i][0].' : '.$this->_usRestantes[$i][1].'</div>';
 				echo '<div class="nb">Effort : '.$this->_usRestantes[$i][2].'<br/>Priorité : '.$this->_usRestantes[$i][3].'</div>';
@@ -207,7 +207,6 @@
 			{
 				die('Erreur : ' . $e->getMessage());
 			}
-			$UsChoisies = array();
 			for($i = 0; $i<sizeof($this->_taches); $i++){
 				//On récupère la liste des US
 				$tokens = explode(",",(implode(explode('"', $this->_taches[$i][3]))));
@@ -219,7 +218,39 @@
 					}
 				}
 			}
+			
 			$bdd = null;
+		}
+		
+		//Affiche la liste des taches de la bdd sous forme de post-it en fonction de l'état
+		public function printTachesPostIt($etat, $sprintId){
+			try{
+				$bdd = new PDO('mysql:host=localhost;dbname=MYP;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+			}catch (Exception $e)
+			{
+				die('Erreur : ' . $e->getMessage());
+			}
+			
+			$reponse = $bdd->query('Select * from Taches where sprint_id = ' . $sprintId . ' and etat = ' . $etat . ';');
+			
+			while($donnees = $reponse->fetch()){
+				//Récupère le login du dev de la tâche
+				$reponse2 = $bdd->query('Select login from Membres where id = (select membre_id from Developpeurs where id = ' . $donnees['developpeur_id'] . ');');
+				$res = $reponse2->fetch();
+				$login =  $res['login'];
+				echo '<div class="post-it-container">';
+				echo '<div class="note yellow">';
+				echo '<div class= "noteCorps">';
+				echo '<div class="noteTitre"> Tâche ' . $donnees['numero'] . '</div>';
+				echo '<div class="champ">Description : ' . $donnees['description'] . '</div>';
+				echo '<div class="champ">Coût : ' . $donnees['cout'] . '</div>';
+				echo '<div class="champ">Développeur : ' . $login . '</div>';
+				echo '<div class="champ">Dépendances : ' . $donnees['dependances'] . '</div>';
+				echo '<div class="champ">US : ' . $donnees['us'] . '</div>';
+				echo '</div>';
+				echo '</div>';
+				echo '</div>';
+			}
 		}
 	}
 ?>
