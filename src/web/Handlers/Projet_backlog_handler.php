@@ -15,14 +15,18 @@
 	echo '<tr id = "first"><td>US#</td><td>Description</td><td>Effort</td><td>Priorité</td><td>Sprint</td></tr>';
 	while ($donnees = $reponse->fetch())
 	{
-		$reponse2 = $bdd->query('Select numero from Sprints where id =' .$donnees['sprint_id'] .  ';');
-		$numero = $reponse2->fetch();
+		$id = '';
+		if(!empty($donnees['sprint_id'])){
+			$reponse2 = $bdd->query('Select numero from Sprints where id =' .$donnees['sprint_id'] .  ';');
+			$numero = $reponse2->fetch();
+			$id = $numero['numero'];
+		 }
 		echo '<tr>';
 		echo '<td id = "numero">' . $donnees['numero'] . '</td>';
 		echo '<td id = "description">' . $donnees['description'] . '</td>';
 		echo '<td id = "effort">' . $donnees['effort'] . '</td>';
 		echo '<td id = "priorite">' . $donnees['priorite'] . '</td>';
-		echo '<td id = "sprint"> ' . $numero['numero'] . '</td>';
+		echo '<td id = "sprint">'. $id .'</td>';
 		echo '</td>';
 	}
 	echo '</table></div>';
