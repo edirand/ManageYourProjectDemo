@@ -1,0 +1,49 @@
+body{
+	
+	font-family: 'Roboto', sans-serif;
+	background-color:#eeeeee;
+	padding-bottom:100px;
+}
+
+h1{	
+	color: #1abc9c;
+	margin-bottom:50px;
+}
+
+#doc_section{
+	padding:50px;
+}
+
+.doc_div{
+	background-color:white;
+	border-radius:10px 10px 5px 5px;	
+}
+.doc_div h2{
+	background-color: #37474F;
+	color: #1abc9c;
+	padding:10px;
+	border-radius:10px 10px 0px 0px;
+	text-align:center;
+	cursor:pointer;
+}
+
+.to_toggle{
+	padding:10px;
+	padding-top:0px;
+}
+
+.doc_content{
+	padding:5px;
+}
+
+.doc_edit_button,.doc_submit_button{
+	background-color: #1abc9c;
+	color:white;
+	padding:5px;
+	border-radius:5px;
+	display:block;
+	margin-top:20px;
+}
+.doc_submit_button{
+	background-color:#4474c4;
+}
