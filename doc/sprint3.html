@@ -15,6 +15,8 @@
 	<section id="user_stories">
 		<h2>Rappel des US</h2>
 		<ul>
+			<li>US9 : En tant que dev/visiteur, je souhaite pouvoir consulter la planification des 
+sprints</li>
 			<li>US13 : En   tant   que   dev/visiteur,   je   souhaite   pouvoir   modifier/consulter 
 l'avancement de la réalisation des tâches (Kanban).</li>
 			<li>US17 : En  tant  que  dev/visiteur,  je  souhaite  pouvoir  consulter  les  outils  de 
@@ -26,6 +28,10 @@ tests</li>
 programmation exigées</li>
 			<li>US21 : En  tant  que  dev,  je  souhaite  pouvoir  consulter  les  règles  et  qualités  de 
 programmation exigées</li>
+			<li>US22 : En  tant  qu’utilisateur,  je  souhaite  pouvoir  atteindre  la  page  d’accueil  du 
+site afin de m’inscrire ou me connecter.</li>
+			<li>US23 : En tant que dev/visiteur, je souhaite pouvoir consulter le graphe de PERT 
+du projet</li>
 
 			
 		</ul>
@@ -34,7 +40,26 @@ programmation exigées</li>
 	<section id="tasks">
 		<h2> Rappel des tâches</h2>
 		<ol>
-				
+			<li>T1 : Modifier la table Tâches dans la base de données afin d’ajouter les dates de 
+début au plus tôt et de fin au plus tard</li>
+			<li>T2 :Implémenter la fonction drag & drop sur le kanban pour modifier l’état d’une 
+tâche</li>
+			<li>T3 : Automatiser l’ajout des dates de début et de fin des tâches en fonction des drag 
+& drop dans le kanban.</li>
+			<li>T4 : Modifier la page Graphe pour ajouter le diagramme de PERT
+</li>
+			<li>T5 : Modifier la page Workspace pour définir une durée globale des sprints.</li>
+			<li>T6 : Modifier la page AjouterSprint pour enlever les dates de début et de fin du sprint 
+(qui seront calculées en fonction de la durée globale)</li>
+			<li>T7 : Modifier la couleur des tâches dans le kanban en fonction du temps restant pour 
+les terminer.</li>
+			<li>T8 : Créer une page d’accueil affichant un descriptif du projet et contenant un lien de 
+connexion et un lien d’inscription.</li>
+			<li>T9 : Implémenter le calcul des début au plus tôt et des fins au plus tard des taches</li>
+			<li>T10 : Ajouter un contrôle sur la page doc afin d’empêcher la modification pour le 
+visiteur</li>
+			<li>T11 : Ecrire les tests</li>
+			<li>T12 : Executer les tests</li>
 		</ol>
 	
 	</section>
@@ -51,7 +76,46 @@ programmation exigées</li>
 				<td> ALL </td>
 				<td> 
 					<ul class="todo">
+						
 					
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+					<li>T1 - Emilien</li>
+					<li>T11 - Laala</li>
+					<li>T12 - Laala</li>
+					</ul>
+				</td>
+			</tr>	
+
+			<tr>
+				<td> US7 </td>
+				<td> 
+					<ul class="todo">
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+					<li>T2 - Emilien</li>
+					<li>T3 - Emilien</li>
+					</ul>
+				</td>
+			</tr>		
+			
+			<tr>
+				<td> US8 </td>
+				<td> 
+					<ul class="todo">				
 					
 					</ul>
 				</td>
@@ -61,10 +125,123 @@ programmation exigées</li>
 				</td>
 				<td> 
 					<ul class="done">
-												
+					<li>T4 - Samuel</li>							
+					</ul>
+				</td>
+			</tr>						
+
+			<tr>
+				<td> US10 </td>
+				<td> 
+					<ul class="todo">
+						
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+										
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+						<li>T5 - Samuel</li>							
 					</ul>
 				</td>
 			</tr>		
+			
+			<tr>
+				<td> US11, US12 </td>
+				<td> 
+					<ul class="todo">
+											
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+						<li>T6 - Laala</li>						
+					</ul>
+				</td>
+			</tr>		
+			
+			<tr>
+				<td> US11 </td>
+				<td> 
+					<ul class="todo">
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+					<li>T7 - Emilien</li>
+					</ul>
+				</td>
+			</tr>
+
+			<tr>
+				<td> US12 </td>
+				<td> 
+					<ul class="todo">
+											
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+						<li>T8 - Laala</li>						
+					</ul>
+				</td>
+			</tr>	
+
+				<tr>
+				<td> US14,15,16 </td>
+				<td> 
+					<ul class="todo">
+						
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+					
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+					<li>T9 - Samuel</li>												
+					</ul>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td> US14->21 </td>
+				<td> 
+					<ul class="todo">
+										
+					</ul>
+				</td>
+				<td> 
+					<ul class="ongoing">
+						
+					</ul>
+				</td>
+				<td> 
+					<ul class="done">
+						<li>T10 - Samuel</li>							
+					</ul>
+				</td>
+			</tr>
 	
 		</table>
 		
