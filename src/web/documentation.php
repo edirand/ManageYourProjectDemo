@@ -4,6 +4,14 @@
 	$doc = get_doc($_SESSION['projet_id']);	
 
 	//$_SESSION['projet_id'];
+	$edit_button = '';
+	
+	if($_SESSION['user_session'] != 1){
+		$edit_button = '<div>
+							<button type="button" class="doc_edit_button">Modifier</button> 
+							<button type="button" class="doc_submit_button">Valider</button>
+						</div>';
+	}
 ?>
 
 
@@ -13,7 +21,8 @@
 	<meta charset="UTF-8">
 	<script src = "js/jquery-3.1.1.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	
+	<script src = "js/jquery-3.1.1.min.js"></script>
 
 	<script src="js/documentation.js"></script>
 	<link href="CSS/documentation.css" rel="stylesheet" media="screen">
@@ -30,13 +39,10 @@
 			<div class="to_toggle">
 				 <div id="adresse_dev_content" class="doc_content">
 				<?php							
-					echo nl2br($doc['adresse_dev']);
+					echo $doc['adresse_dev'];
 				?>
 				</div>
-				<div>
-					<button type="button" class="doc_edit_button">Modifier</button> 
-					<button type="button" class="doc_submit_button">Valider</button> 
-				</div>
+					<?php echo $edit_button;?>				
 			</div>
 		</div>
 		
@@ -46,13 +52,10 @@
 				<div id="adresse_demo_content" class="doc_content">
 				<?php				
 					
-					echo  nl2br($doc['adresse_demo']);
+					echo $doc['adresse_demo'];
 				?>
 				</div>
-				<div>
-					<button type="button" class="doc_edit_button">Modifier</button> 
-					<button type="button" class="doc_submit_button">Valider</button> 
-				</div>
+					<?php echo $edit_button;?>
 			</div>
 		</div>
 		
@@ -62,13 +65,10 @@
 				 <div id="politique_tests_content" class="doc_content">
 				<?php				
 					
-					echo nl2br($doc['politique_tests']);
+					echo $doc['politique_tests'];
 				?>
 				</div>
-				<div>
-					<button type="button" class="doc_edit_button">Modifier</button> 
-					<button type="button" class="doc_submit_button">Valider</button> 
-				</div>
+				<?php echo $edit_button;?>
 			</div>
 		</div>
 		
@@ -78,13 +78,10 @@
 				<div id="langages_outils_content" class="doc_content">				
 				<?php				
 					
-					echo nl2br($doc['langages_outils']);
+					echo $doc['langages_outils'];
 				?>
 				</div>
-				<div>
-					<button type="button" class="doc_edit_button">Modifier</button> 
-					<button type="button" class="doc_submit_button">Valider</button> 
-				</div>
+				<?php echo $edit_button;?>
 			</div>
 		</div>
 		
@@ -94,13 +91,10 @@
 				<div id="regles_depot_content" class="doc_content">
 				<?php				
 					
-					echo nl2br($doc['regles_depot']);
+					echo $doc['regles_depot'];
 				?>
 				</div>
-				<div>
-					<button type="button" class="doc_edit_button">Modifier</button> 
-					<button type="button" class="doc_submit_button">Valider</button> 
-				</div>
+				<?php echo $edit_button;?>
 			</div>
 		</div>
 		
@@ -110,13 +104,10 @@
 				 <div id="regles_qualite_content" class="doc_content">
 				<?php				
 					
-					echo nl2br($doc['regles_qualite']);
+					echo $doc['regles_qualite'];
 				?>
 				</div>
-				<div>
-					<button type="button" class="doc_edit_button">Modifier</button> 
-					<button type="button" class="doc_submit_button">Valider</button> 
-				</div>
+				<?php echo $edit_button;?>
 			</div>
 		</div>
 		
