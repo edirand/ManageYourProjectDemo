@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS Projets
 (id int unsigned not null auto_increment primary key,
 nom varchar(250),
 description varchar(1024),
+temps_jours int,
 flag_Prive int,
 flag_Etat int
 );
@@ -45,7 +46,11 @@ projet_id int unsigned not null,
 FOREIGN KEY (projet_id) REFERENCES Projets(id) ON DELETE cascade,
 commit_id varchar(512), 
 sprint_id int unsigned,
-FOREIGN KEY (sprint_id) REFERENCES Sprints(id) ON DELETE cascade
+sprint_id_retard int unsigned, 
+#Va servir à empécher de valider une tache si elle n'est pas finie quand tous les sprints sont terminés
+bloque int,
+FOREIGN KEY (sprint_id) REFERENCES Sprints(id) ON DELETE cascade,
+FOREIGN KEY (sprint_id_retard) REFERENCES Sprints(id) ON DELETE cascade
 );
 
 #Contient la liste des développeurs d'un projet sous forme d'id
@@ -66,6 +71,8 @@ cout float,
 etat int,
 date_debut date,
 date_fin date,
+debut_tot date,
+fin_tard date,
 sprint_id int unsigned not null,
 us varchar(10),
 developpeur_id int unsigned not null,

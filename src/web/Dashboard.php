@@ -22,7 +22,7 @@
 
 <div class = "projet">
 <div class = "logo">
-<a href="workspace.php"><img src="icons/Logo2.png" title="Manage Your Project" alt="Manage Your Project" height = "50px" width = "100px"/></a></div>
+<a href="home.php"><img src="icons/Logo2.png" title="Manage Your Project" alt="Manage Your Project" height = "50px" width = "100px"/></a></div>
 <div class = "title">
 <h1><?php echo $_SESSION['projet_nom']; ?></h1>
 <a href="workspace.php"><img src="icons/quitter.png" title="Fermer le projet" alt="Quitter" height = "25px" width = "25px"/></a>

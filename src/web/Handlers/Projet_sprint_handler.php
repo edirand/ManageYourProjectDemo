@@ -42,13 +42,13 @@
 	
 	echo '<div class = "kanban">';
 	echo '<table id = "k"><tr><th>TO DO</th><th>ON GOING</th><th>DONE</th></tr>';
-	echo '<tr><td>';
+	echo '<tr id="colonnes"><td id = "ToDo">';
 	$taches->printTachesPostIt(0, $_POST['sprint_id']);
 	echo '</td>';
-	echo '<td>';
+	echo '<td id = "OnGoing">';
 	$taches->printTachesPostIt(1, $_POST['sprint_id']);
 	echo '</td>';
-	echo '<td>';
+	echo '<td id = "Done">';
 	$taches->printTachesPostIt(2, $_POST['sprint_id']);
 	echo '</td></tr></table>';
 	echo '</div>';

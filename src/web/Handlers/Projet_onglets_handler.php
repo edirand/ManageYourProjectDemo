@@ -18,7 +18,7 @@
 
 	while ($donnees = $reponse->fetch())
 	{
-		echo '<a href="#" onclick = "descSprint(' . $donnees['id'] . '); ; changeColor(' . $nbSprints['count(*)'] . ',' . $donnees['numero'] . ')"><li id = "sprint'.$donnees['numero'].'">Sprint #'.$donnees['numero'].'</li></a>';
+		echo '<a href="#" onclick = "descSprint(' . $donnees['id'] . ', ' . $_SESSION['user_session'] . '); ; changeColor(' . $nbSprints['count(*)'] . ',' . $donnees['numero'] . ')"><li id = "sprint'.$donnees['numero'].'">Sprint #'.$donnees['numero'].'</li></a>';
 
 	}
 	//Empêche la planification de sprint pour les visiteurs

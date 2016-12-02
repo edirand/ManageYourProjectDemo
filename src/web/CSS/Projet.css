@@ -12,6 +12,12 @@ body{
 /* Onglets ------------------------------------------------------------*/
 /*----------------------------------------------------------------------------*/
 
+.imgMod{
+	float : right;
+	margin-top : 10px;
+	margin-right : 50px;
+	margin-bottom : 10px;
+}
 .contenu #onglets{
 	display : inline-block;
 	margin-left : 10px;
@@ -161,13 +167,58 @@ body{
 	border : 1px solid black;
 }
 
-.post-it-container{
+.post-it-container-todo{
 	display : inline-block;
 	margin : 15px;
 	margin-left : 30px;
 	width : 80%;
 	text-align : left;
 	vertical-align : top;
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+
+.post-it-container-ongo{
+	display : inline-block;
+	margin : 15px;
+	margin-left : 30px;
+	width : 80%;
+	text-align : left;
+	vertical-align : top;
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+
+.post-it-container-done{
+	display : inline-block;
+	margin : 15px;
+	margin-left : 30px;
+	width : 80%;
+	text-align : left;
+	vertical-align : top;
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+
+.post-it-container-todo:active{
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.post-it-container-ongo:active{
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.post-it-container-done:active{
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
 }
 
 .note{
@@ -206,11 +257,81 @@ body{
 	padding : 0;
 }
 
-.yellow{
-	background : #eae672;
+.orange{
+	/*background : #eae672;*/
+	background : #FFAB40;
 	-webkit-transform : rotate(2deg);
 	-moz-transform : rotate(2deg);
 	-o-transform : rotate(2deg);
 	-ms-transform : rotate(2deg);
 	transform : rotate(2deg);
+}
+
+.yellow{
+	background : #FFEE58;
+	-webkit-transform : rotate(2deg);
+	-moz-transform : rotate(2deg);
+	-o-transform : rotate(2deg);
+	-ms-transform : rotate(2deg);
+	transform : rotate(2deg);
+}
+
+.red{
+	background : #EF5350;
+	-webkit-transform : rotate(2deg);
+	-moz-transform : rotate(2deg);
+	-o-transform : rotate(2deg);
+	-ms-transform : rotate(2deg);
+	transform : rotate(2deg);
+}
+.pop-background{
+		position : fixed;
+		width : 100%;
+		height : 100%;
+		top : 0;
+		left : 0;
+		background : #000;
+		opacity : .8;
+		z-index : 1000;
+		display : none;
+}
+	
+.pop{
+		position : absolute;
+		background : #fff;
+		opacity : 1;
+		width : 45%;
+		height : 15%;
+		margin : 10% 0 0 25%;
+		padding : 20px;
+		z-index : 1500;
+		display : none;
+}
+
+.boutons{
+	margin-top : 20px;
+	display : block;
+	text-align : center;
+}
+
+#val {
+	background-color :#1abc9c;
+	color : white;
+	border : none;
+	margin-right : 10px;
+	width : 20%;
+	height : 40px;
+	border-radius : 10px;
+	font-size : 12px;
+}
+
+#annul {
+	background-color :#1abc9c;
+	color : white;
+	border : none;
+	width : 20%;
+	height : 40px;
+	border-radius : 10px;
+	font-size : 12px;
+
 }

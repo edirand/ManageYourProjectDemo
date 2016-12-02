@@ -12,16 +12,17 @@ if(!isset($db)){
 	}
 }
 
-function insert_project($name, $description, $visibility, $state){
+function insert_project($name, $description,$sprint_duration, $visibility, $state){
 	global $db;
 
-	$sql = 'INSERT INTO projets (nom, description, flag_Prive, flag_Etat)
-			VALUES (:name, :description, :visibility, :state)';
+	$sql = 'INSERT INTO projets (nom, description, temps_jours, flag_Prive, flag_Etat)
+			VALUES (:name, :description,:duration, :visibility, :state)';
 	
 	$req = $db -> prepare($sql);
 	$req -> execute(array(
 		'name'=>$name,
 		'description'=>$description,
+		'duration'=>$sprint_duration,
 		'visibility'=>$visibility,
 		'state'=>$state));
 	$last_id = $db->lastInsertId();

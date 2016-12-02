@@ -4,10 +4,16 @@ function descProjet(){
 		});
   }
 
-function descSprint(id){
+function descSprint(id, user){
 	$.post('Handlers/Projet_sprint_handler.php',{sprint_id: id}, function(tableau){
 		  $('div#content').html((tableau));
-		  });
+		   if(user !=1){
+		   setDragg();
+		   setDrop(id);
+		   }else{
+		   alert('Vous n\'êtes pas autorisé');
+		   }
+		   });
 }
 
 function getOnglets(id){

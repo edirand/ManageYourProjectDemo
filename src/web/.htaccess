@@ -3,4 +3,4 @@ ErrorDocument 404 /ManageYourProjectDev/src/web/erreur404.php
 RewriteEngine On
 #  l'ordre d'importance est de gauche à droite, le premier fichier
 #  à être lu étant à gauche
-DirectoryIndex login.php index.php index.html
+DirectoryIndex home.php index.php index.html

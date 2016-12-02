@@ -9,9 +9,9 @@
 		
 		
 		//Permet de créer une nouvelle tâche et de l'ajouter dans le tableau
-		public function creerTache($description, $cout, $etat, $us, $dependances, $developpeur, $debut, $fin){
+		public function creerTache($description, $cout, $etat, $us, $dependances, $developpeur){
 			$tache = array();
-			array_push($tache, $description, $cout, $etat, $us, $dependances, $developpeur, $debut, $fin);
+			array_push($tache, $description, $cout, $etat, $us, $dependances, $developpeur);
 			array_push($this->_taches, $tache);
 			
 		}
@@ -143,9 +143,9 @@
 		}
 		
 		//Modifie l'élément à la position i
-		public function modifierTache($i, $description, $cout, $etat, $us, $dependances, $developpeur, $debut, $fin){
+		public function modifierTache($i, $description, $cout, $etat, $us, $dependances, $developpeur){
 			$tache = array();
-			array_push($tache, $description, $cout, $etat, $us, $dependances, $developpeur, $debut, $fin);
+			array_push($tache, $description, $cout, $etat, $us, $dependances, $developpeur);
 			$this->_taches[$i] = $tache;
 		}
 		
@@ -156,7 +156,7 @@
 		}
 		
 		public function getInfos($i){
-			$res = $this->_taches[$i][0] . '|' . $this->_taches[$i][5] . '|' . $this->_taches[$i][1]. '|' . str_replace('"', "", $this->_taches[$i][3]). '|' . str_replace('"', "",$this->_taches[$i][4]) . '|' . $this->_taches[$i][6] . '|' . $this->_taches[$i][7];
+			$res = $this->_taches[$i][0] . '|' . $this->_taches[$i][5] . '|' . $this->_taches[$i][1]. '|' . str_replace('"', "", $this->_taches[$i][3]). '|' . str_replace('"', "",$this->_taches[$i][4]);
 			return $res;
 		}
 		
@@ -189,13 +189,11 @@
 				$us = $this->_taches[$i][3];
 				$dep = $this->_taches[$i][4];
 				$dev = $this->_taches[$i][5];
-				$deb = $this->_taches[$i][6];
-				$fin = $this->_taches[$i][7];
 
 				//On récupère l'id du développeur
 				$idDev = $this->getDevId($dev, $projetId);
 				$num = strval(intval($i)+1);
-				$reponse = $bdd->exec ('Insert into Taches(numero, description, cout, etat, sprint_id, us, developpeur_id, dependances, date_debut, date_fin) value (' . $num . ',"' .$desc . '", ' . $cout . ',' . $etat . ',' . $idSprint . ',' . $us . ',' . $idDev . ',' . $dep . ',"' . $deb . '", "' . $fin . '");');
+				$reponse = $bdd->exec ('Insert into Taches(numero, description, cout, etat, sprint_id, us, developpeur_id, dependances) value (' . $num . ',"' .$desc . '", ' . $cout . ',' . $etat . ',' . $idSprint . ',' . $us . ',' . $idDev . ',' . $dep . ');');
 			}
 			$bdd = null;
 		}
@@ -231,15 +229,50 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 			
+			if($etat == 0){
+				$class = "todo";
+			}else if($etat == 1){
+				$class = "ongo";
+			}else{
+				$class = "done";
+			}
 			$reponse = $bdd->query('Select * from Taches where sprint_id = ' . $sprintId . ' and etat = ' . $etat . ';');
+			
+			$today = date("Y-m-d");
 			
 			while($donnees = $reponse->fetch()){
 				//Récupère le login du dev de la tâche
 				$reponse2 = $bdd->query('Select login from Membres where id = (select membre_id from Developpeurs where id = ' . $donnees['developpeur_id'] . ');');
 				$res = $reponse2->fetch();
 				$login =  $res['login'];
-				echo '<div class="post-it-container">';
-				echo '<div class="note yellow">';
+				
+				//Si la tâche est terminée, on regarde si elle a été finie dans les temps
+				if($donnees['etat'] == 2){
+					$reponse2 = $bdd->query('SELECT DATEDIFF((Select fin_tard from Taches where id =' . $donnees['id'] .' ) , (Select date_fin from Taches where id = ' . $donnees['id'] . '))as diff;');
+					$res = $reponse2->fetch();
+					$restant = $res['diff'];
+					if($restant < 0){
+						$couleur = "red";
+					}else if(($restant >= 0)&&($restant <2)){
+						$couleur = "orange";
+					}else{
+						$couleur = "yellow";
+					}
+				}else{
+					//Sinon on récupère le temps restant pour changer la couleur de la tache.
+					$reponse2 = $bdd->query('SELECT DATEDIFF((Select fin_tard from Taches where id =' . $donnees['id'] .' ) , "' . $today . '")as diff;');
+					$res = $reponse2->fetch();
+					$restant = $res['diff'];
+					if($restant < 0){
+						$couleur = "red";
+					}else if(($restant >= 0)&&($restant <2)){
+						$couleur = "orange";
+					}else{
+						$couleur = "yellow";
+					}
+				}
+				echo '<div class="post-it-container-'. $class .'"id ="' . $donnees['id'] . '">';
+				echo '<div class="note ' . $couleur . '">';
 				echo '<div class= "noteCorps">';
 				echo '<div class="noteTitre"> Tâche ' . $donnees['numero'] . '</div>';
 				echo '<div class="champ">Description : ' . $donnees['description'] . '</div>';

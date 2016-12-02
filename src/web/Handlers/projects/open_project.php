@@ -15,6 +15,6 @@
 	$donnees = $reponse->fetch();
 	$_SESSION['projet_id'] = $donnees['id'];
 	$_SESSION['projet_nom'] = $name;
-	header('Location: ../../Dashboard.php');
+	echo "<script>top.location.href='mise_a_jour_retards.php';</script>";
 ?>
 

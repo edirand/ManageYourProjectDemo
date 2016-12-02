@@ -10,12 +10,17 @@
 	   isset($_POST['project_repdev'])&&
 	   isset($_POST['project_repdemo'])&&
 	   isset($_POST['project_description'])&&
+	   isset($_POST['sprint_duration'])&&
 	   isset($_POST['user_login'])){
+		
+		
 		$project_id = insert_project(
 									 $_POST['project_name'],
 									 $_POST['project_description'],
+									 $_POST['sprint_duration'],
 									 $_POST['project_visibility'],
 									 0);
+        
 		$US = $_POST['US'];
 		$count = 0;
 		foreach($US as $us){
@@ -25,5 +30,5 @@
 		insert_dev($_POST['user_login'],$project_id);
 		echo "<script>top.location.href='../../workspace.php';</script>";
 	}
-	echo 'error';
+	else echo 'error';
 ?>

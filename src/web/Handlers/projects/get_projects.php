@@ -1,5 +1,4 @@
 <?php
-
 if(!isset($db)){
 	
 	try
@@ -12,20 +11,18 @@ if(!isset($db)){
 	}
 }
 
-function get_projects($limit=1,$member_name){
+function get_projects($limit=1,$id){
 	global $db;
 	/* récupération de l'id du membre*/
-	$sql = 'SELECT id		
+	/*$sql = 'SELECT id
 			FROM membres 
 			WHERE login="'.$member_name.'"';
 	$req = $db -> prepare($sql);
 	$req -> execute();	
 	$member_id=$req->fetch();	
-	
-	/* récupération des id des projets associés au membre*/
-	$sql = 'SELECT projet_id		
-			FROM developpeurs 
-			WHERE membre_id="'.$member_id['id'].'"';
+	*/
+	/* récupération des id des projets associés au membre
+	$sql = 'SELECT projet_id FROM developpeurs WHERE membre_id=' . $_SESSION['user_session'];
 	$req = $db -> prepare($sql);
 	$req -> execute();	
 	$id_projects_array = array();
@@ -35,12 +32,11 @@ function get_projects($limit=1,$member_name){
 	}	
 	
 	$id_projects = implode(",",$id_projects_array);
-	//return $id_projects;
+	//return $id_projects;*/
 	
 	/* récupération des projets*/
 	$projects = array();
-	$sql = 'SELECT *		
-			FROM projets WHERE id IN ('.$id_projects.')';
+	$sql = 'select * from Projets where flag_Prive = 0 or id in (select projet_id from developpeurs where membre_id = '. $id . ')';
 	
 	$req = $db -> prepare($sql);
 	$req -> execute();
