@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 <form method="POST" action="Handlers/Parametre_save_handler.php">
 	<div class = "contenu">
 		<h1> Paramètres </h1>
@@ -47,7 +46,11 @@
 				La suppression d'un projet est définitive.
 			</div>
 		</div>
-		<input class = "bouton" type="submit" value="Valider" >
+<?php if($_SESSION['user_session']!=1){
+		echo '<input class = "bouton" type="submit" value="Valider" >';
+}else {
+	echo '<div>Vous n\'avez pas les droits pour modifier le contenu de ce projet</div>';
+}?>
 	</div>
 </form>
 </body>

@@ -10,9 +10,8 @@
 	$us = $_POST['us'];
 	$dev = $_POST['dev'];
 	$dep = $_POST['dep'];
-	$deb = $_POST['deb'];
-	$fin = $_POST['fin'];
-	$test->modifierTache($n, $desc, $cout, 0, $us, $dep, $dev, $deb, $fin);
+
+	$test->modifierTache($n, $desc, $cout, 0, $us, $dep, $dev);
 	$_SESSION['taches'] = serialize($test);
 	echo $test->printAllTachesPostIt();
 	?>

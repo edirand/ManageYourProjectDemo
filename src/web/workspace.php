@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("Handlers/projects/get_projects.php");
-	$projects = get_projects(10,$_SESSION['login']);
+	$projects = get_projects(10,$_SESSION['user_session']);
 	
 	include("Handlers/projects/get_logs.php");
 	$logs = get_logs();

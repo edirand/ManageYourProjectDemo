@@ -1,0 +1,179 @@
+/*----------------------------------------------------------------------------*/
+/* Général ------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+
+body{
+	margin : 0;
+	font-family: 'Roboto', sans-serif;
+	background-color : #EEEEEE;
+}
+
+.contenu{
+	margin-left : 30px;
+	margin-top : 30px;
+
+	background-color : #EEEEEE;
+}
+/*----------------------------------------------------------------------------*/
+/* Backlog ------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+.contenu {
+	margin-top : 60px;
+	margin-left :60px;
+	margin-bottom : 20px;
+	border : 1px solid black;
+	border-radius : 5px;
+	width : 90%;
+}
+
+.title{
+	background-color : #37474F;
+	margin-bottom : 10px;
+	border-bottom : 1px solid black;
+	padding : 5px;
+}
+
+.corps{
+	display : block;
+}
+.corps .desc{
+	margin-left : 20px;
+}
+.corps a .ImgAjout
+{
+	display : block;
+	margin-top : 10px;
+	margin-right : 50px;
+	float : right;
+}
+
+.back #b{
+	display : block;
+	margin-top : 50px;
+	margin-left : 20px;
+	background-color : white;
+	width : 95%;
+	border-collapse : collapse;
+	margin-bottom : 30px;
+}
+
+.back #b #first{
+	text-align : center;
+}
+
+.back #b tr td{
+	padding-top : 10px;
+	padding-bottom : 10px;
+	border : 1px solid black;
+}
+
+.back #b tr #effort{
+	text-align : center;
+	width : 7%;
+}
+
+.back #b tr #numero{
+	text-align : center;
+	width : 7%;
+}
+
+.back #b tr #priorite{
+	text-align : center;
+	width : 7%;
+}
+.back #b tr #numero{
+	text-align : center;
+	width : 7%;
+}
+
+.back #b tr .modif{
+	text-align : center;
+	width : 7%;
+}
+/*----------------------------------------------------------------------------*/
+/* Titre -------------------------------*/
+/*----------------------------------------------------------------------------*/
+.title{
+	background-color : #37474F;
+	margin-bottom : 10px;
+	border-bottom : 1px solid black;
+	padding : 5px;
+	
+}
+
+.title p{
+	font-size : 120%;
+	color : #1abc9c;
+	display : inline-block;
+	margin : 0;
+	margin-left : 10px;
+	padding : 0;
+}
+
+/*----------------------------------------------------------*/
+/* Popup ----------------------------*/
+/*----------------------------------------------------------*/
+
+.pop_background{
+	position : fixed;
+	width : 100%;
+	height : 100%;
+	top : 0;
+	left : 0;
+	background : #000;
+	opacity : .8;
+	z-index : 1000;
+	cursor : pointer;
+	display : none;
+}
+
+.popup{
+	position : absolute;
+	background : #fff;
+	width : 70%;
+	height : 80%;
+	margin-left : 10%;
+	padding : 20px;
+	z-index : 1500;
+	display : none;
+	overflow : auto;
+}
+
+.popup a{
+	text-decoration : none;
+	background-color :#1abc9c;
+	color : white;
+	padding : 10px;
+	min-height : 20px;
+	font-size : 14px;
+	border:none;
+	border-radius : 5px;
+	margin-top : 20px;
+	margin-bottom : 10px;
+	margin-right : 10px;
+	float : right;
+}
+
+
+.p_partie{
+	border : 1px solid black;
+	border-radius : 5px;
+	margin-top : 10px;
+}
+
+.p_partie .p_titre{
+	padding : 5px;
+	font-size : 120%;
+	color : #1abc9c;
+	background-color : #37474F;
+}
+
+.p_partie .p_content{
+	padding : 10px;
+	
+}
+
+.corps .p_partie .p_content p{
+	margin-top : 5px;
+	margin-bottom : 0px;
+}

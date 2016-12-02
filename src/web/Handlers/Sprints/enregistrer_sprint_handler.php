@@ -3,9 +3,10 @@
 	error_reporting(E_ALL);
 	session_start();
 	require_once('tasks.php');
+	require_once('../tasks/tasks_requests.php');
 	$test = unserialize($_SESSION['taches']);
 	$debut = $_POST['debut'];
-	$fin = $_POST['fin'];
+
 
 	//On créé un nouveau sprint
 	try{
@@ -14,6 +15,13 @@
 	{
 		die('Erreur : ' . $e->getMessage());
 	}
+
+		$reponse2 = $bdd->query('Select temps_jours from projets where id = '. $_SESSION['projet_id']);
+		$donnees2 = $reponse2->fetch();
+		$nbrJours = $donnees2['temps_jours'];
+
+	$fin = date('y-m-d', strtotime($debut. '+'.$nbrJours.' days'));
+
 	$reponse = $bdd->exec('Insert into Sprints(numero, date_debut, date_fin, projet_id) Value(' . $_SESSION['sprint_id'] . ', "' . $debut . '", "' . $fin . '", ' . $_SESSION['projet_id'] . ')');
 
 	//On récupère l'id du sprint créé
@@ -28,6 +36,7 @@
 	
 	$test->enregistrerAllTaches($id, $_SESSION['projet_id']);
 	$test->enregistrerUsChoisies($id, $_SESSION['projet_id']);
+	update_tasks_sl($_SESSION['projet_id']);
 	
 	//Enregistrement terminé, on passe au réinitialise
 	//header('Location: reinitialize_session.php');

@@ -64,6 +64,13 @@
 					<input type="text" name="project_repdemo" id="project_repdemo"/>
 				</div>
 				</div>
+				
+				<div id="sprints_duration" >
+					<label for="sprint_duration">Durée pour chaque sprint (jours)</label>
+					<input type="number" min="1" name="sprint_duration" id="sprint_duration"value="7"/>
+				
+				</div>
+				
 				<div id="US_fields">
 					<table id="US_table">
 						<tr class="US_tr">

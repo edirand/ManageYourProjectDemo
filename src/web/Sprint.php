@@ -2,6 +2,22 @@
 	session_start();
 	require_once('Handlers/Sprints/tasks.php');
 	$listes = unserialize($_SESSION['taches']);
+		try{
+			$bdd = new PDO('mysql:host=localhost;dbname=MYP;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		}catch (Exception $e)
+		{
+			die('Erreur : ' . $e->getMessage());
+		}
+		$reponse = $bdd->query('Select Count(*) as nb from Sprints where projet_id = '. $_SESSION['projet_id']);
+		$donnees = $reponse->fetch();
+		$nbSprints = $donnees['nb'];
+
+        $reponse2 = $bdd->query('select date_fin from sprints where projet_id = '. $_SESSION['projet_id'].' order by id desc limit 1');
+        $donnees2 = $reponse2->fetch();
+        $lastSprintEnd = $donnees2['date_fin'];
+        $newSprintDate = date('y-m-d', strtotime($lastSprintEnd. '+1 days'));
+
+
 	?>
 
 <!DOCTYPE html>
@@ -30,21 +46,7 @@ Description
 <textarea name="desc" rows="10" cols="115" id = "description"></textarea>
 </div>
 </div>
-<div class = "p_partie">
-<div class = "p_titre">
-Planning
-</div>
-<div class = "p_content" id="dates">
-<div class = "date">
-<label for="debut">Date de début prévue</label>
-<input type="date" name="debut" id = "debutT">
-</div>
-<div class = "date">
-<label for="fin"> Date de fin prévue</label>
-<input type="date" name="fin" id = "finT">
-</div>
-</div>
-</div>
+
 
 <div class = "p_partie">
 <div class = "p_titre">
@@ -94,23 +96,34 @@ Développement
 
 	<div class = "contenu">
 <div class = "numSprint"><h1>Sprint #<?php echo $_SESSION['sprint_id'];?></h1></div>
-			<div class = "partie">
-				<div class = "title"><img src = "Icons/calendar.png" width = "30px"/>Délais</div>
-				<div class = "content" id="dates">
-					<div class = "date">
-							<label for="debut"> Indiquez une date de début du sprint</label>
-							<input type="date" name="debut" id = "debut">
-					</div>
-					<div class = "date">
-						<label for="fin"> Indiquez une date de fin du sprint</label>
-						<input type="date" name="fin" id = "fin">
-					</div>
-				</div>
-				</div>
+                <?php
+
+                if ($nbSprints<1) {
+					echo '<div class = "partie">
+							<div class = "title"><img src = "Icons/calendar.png" width = "30px"/>Délais</div>
+							<div class = "content" id="dates">
+								<div class = "date" >
+
+									<label for="debut" > Indiquez une date de début du sprint </label >
+									<input type = "date" name = "debut" id = "debut" >
+								</div >
+							</div>
+							</div>';
+                }
+
+                else
+                {
+                   echo ' <input type = "hidden" name = "debut" id = "debut" value="'.$newSprintDate.'" >';
+                }
 
 
 
-				<div class = "partie">
+                    ?>
+
+
+
+
+                 <div class = "partie">
 					<div class = "title"><img src = "Icons/list.png" width = "30px"/>Tâches<a href="#" id ="add"><img src="Icons/add-sprint.png" width = "30px"/></a></div>
 					<div class = "content" id="tasks">
 						<?php $listes->printAllTachesPostIt();?>
@@ -155,12 +168,6 @@ $(document).ready(function() {
 									   var usL;
 									   var developpeur;
 									   var dependance;
-									   var date1 = $("#debutT").val();
-									   var date2 = $("#finT").val();
-									   if(date1==""||date2==""){
-									   alert('Veuillez entrer les dates de début et de fin du sprint');
-									   return;
-									   }
 									   
 									   //On rajoute les guillemets sur les chaines
 									   description = $("#description").val();
@@ -208,13 +215,14 @@ $(document).ready(function() {
 									   }
 									   
 									   if(modif){
-									   $.post("Handlers/Sprints/modif_tache_handler.php", {id : idModif, desc : description, cost : cout, us : usL, dev : developpeur, dep : dependance, deb : date1, fin : date2}, function(data){
+									   $.post("Handlers/Sprints/modif_tache_handler.php", {id : idModif, desc : description, cost : cout, us : usL, dev : developpeur, dep : dependance}, function(data){
 												 $("#tasks").replaceWith(data);
-
-											  });
+											  }).done(function(){
+													  modif=false;
+													  });
 									   
 									   }else{
-									   $.post("Handlers/Sprints/creer_tache_handler.php", {desc : description, cost : cout, us : usL, dev : developpeur, dep : dependance, deb : date1, fin : date2}, function(data){
+									   $.post("Handlers/Sprints/creer_tache_handler.php", {desc : description, cost : cout, us : usL, dev : developpeur, dep : dependance}, function(data){
 												 $("#tasks").replaceWith(data);
 											  });
 									   
@@ -239,10 +247,7 @@ function charger(i){
 		  $("#cout").val(tokens[2]);
 		  var US = tokens[3].split(",");
 		  var dep = tokens[4].split(",");
-		  $("#debutT").val(tokens[5]);
-		  $("finT").val(tokens[6]);
-		  
-		  var id
+		  var id;
 		  for(var i=0; i<$(US).length; i++){
 			id = US[i];
 			$(".checkboxUs[value=" + (parseInt(id) -1) +"]").prop("checked",true);
@@ -263,7 +268,7 @@ function charger(i){
 function supprimer(i){
 	$.post("Handlers/Sprints/suppr_tache_handler.php", {id : i}, function(data){
 		   $("#tasks").replaceWith(data);
-		   $.get("list_tache_handler.php", function(data){
+		   $.get("Handlers/Sprints/list_tache_handler.php", function(data){
 				 $(".tachesListes").replaceWith(data);
 				 });});
 }
@@ -276,12 +281,12 @@ function retour(){
 
 function valider(){
 	var date1 = $("#debut").val();
-	var date2 = $("#fin").val();
-	if(date1==""||date2==""){
-		alert('Veuillez entrer les dates de début et de fin du sprint');
+
+	if(date1==""){
+		alert('Veuillez entrer la date de début de votre sprint');
 		return;
 	}
-	$.post("Handlers/Sprints/enregistrer_sprint_handler.php", {debut : date1, fin : date2}, function(){
+	$.post("Handlers/Sprints/enregistrer_sprint_handler.php", {debut : date1}, function(){
 		   retour();
 		   });
 }

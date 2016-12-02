@@ -9,10 +9,9 @@
 	$us = $_POST['us'];
 	$dev = $_POST['dev'];
 	$dep = $_POST['dep'];
-	$deb = $_POST['deb'];
-	$fin = $_POST['fin'];
 
-	$test->creerTache($desc, $cout, 0, $us, $dep, $dev, $deb, $fin);
+
+	$test->creerTache($desc, $cout, 0, $us, $dep, $dev);
 	//On enregistre l'id de la dernière tache pour pas l'afficher dans la liste
 	$_SESSION['taches'] = serialize($test);
 	echo $test->printAllTachesPostIt();
