@@ -16,7 +16,7 @@
 	<div class="secteur" id = "s1">
 		<div class = "text-left">
 			<div class = "title">Gérez efficacement vos projets de développement !</div>
-			<div class = "desc">Manage Your Projects vous offre un outil complet pour organiser de A à Z votre projet.</div>
+			<div class = "desc">Manage Your Project vous offre un outil complet pour organiser de A à Z votre projet.</div>
 			<div class = "bouton" href = "#" onclick="window.location.href='sign-up.php'">Go</div>
 		</div>
 		<div class = "text-right">
@@ -44,7 +44,7 @@
 		</div>
 		<div class = "text-right">
 			<div class = "s-title">Créez votre projet, rédigez vos User Stories, planifiez votre sprints et vos tâches.</div>
-			<div class="s-desc">Avec Manage Your Projet, vous avez à votre dispositions tous les outils nécessaire au bon déroulement d'un projet SCRUM</div>
+			<div class="s-desc">Avec Manage Your Project, vous avez à votre disposition tous les outils nécessaires au bon déroulement d'un projet SCRUM</div>
 		</div>
 	</div>
 	<div class="secteur" id= "s3">
@@ -68,7 +68,7 @@
 		</div>
 	</div>
 	<div class = "text-right">
-		<div class = "s-title">Visualisez l'avancement du projet</div><div class="s-desc">Les outils statistiques vous permettent de voir directement où vous en êtes</div>
+		<div class = "s-title">Visualisez l'avancement du projet.</div><div class="s-desc">Les outils statistiques vous permettent de voir directement où vous en êtes</div>
 	</div>
 	</div>
 </body>
