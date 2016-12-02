@@ -3,15 +3,17 @@
 /*----------------------------------------------------------------------------*/
 body{
 	background-color: #EEEEEE;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif; 
+	padding-bottom : 50px;
 }
-
+h3{
+	font-family: 'Roboto', sans-serif;
+	font-size : 16px;
+}
 .contenu {
 	margin-top : 60px;
 	margin-left : 60px;
 }
-
-
 
 #container-burndown{
 	display : inline-block;
@@ -102,4 +104,3 @@ body{
 #save-ic{
 	text-align: right;
 }
-

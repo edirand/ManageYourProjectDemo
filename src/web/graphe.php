@@ -8,12 +8,13 @@ session_start();
 <html lang="fr">
 <head>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>   
+<meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 	<script src = "js/jquery-3.1.1.min.js"></script>
 	<script src="js/pert.js"></script>	
 	<link href="CSS/pert.css" rel="stylesheet" media="screen">
 	<link href="CSS/Graphe.css" rel="stylesheet" media="screen">
+	<link href="CSS/diagram_pert.css" rel="stylesheet" media="screen">
 
     <!-- jQuery -->
 
@@ -55,7 +56,7 @@ session_start();
             echo '<td class ="td-btn" id="commit-td">
                 <label style="text-align: center" id="label-ic'.$i.'">'. $donnees['commit_id'] .'</label>
                 <input  type="text" name="text-ic" id="text-ic'.$i.'"  value="'. $donnees['commit_id'] .'" style="display:none"></button>
-                <input type="button" class="edit" name="edit-ic" id="edit-ic'.$i.'" Value="Edit" onClick="edit_click('.$i.')" style="width:18%"></button>
+                <input type="button" class="edit" name="edit-ic" id="edit-ic'.$i.'" Value="Edit" onClick="edit_click('.$i.', '. $_SESSION['user_session'] . ')" style="width:18%"></button>
                 <input type="button" class="but"  name="save-ic" type="button" id="save-ic'.$i.'" Value="Save" onClick="save_click('.$i.')" style="display:none"></button>
 
         </a>
@@ -86,26 +87,29 @@ session_start();
             $reponse = $bdd->query('Select id from Sprints where projet_id = '. $_SESSION['projet_id'] . ' and numero = ' . $i);
             $donnees = $reponse->fetch();
             $id = $donnees['id'];
-            //On récupère l'effort prévu et l'effort réel
-            $reponse2 = $bdd->query('Select * from ((Select Sum(effort) as prevu from UserStory where sprint_id = ' . $id . ')as effort_prevu, (Select Sum(effort)as reel from UserStory where sprint_id = ' . $id . ' and commit_id is not null)as effort_reel);');
+            //On récupère l'effort prévu et l'effort réel des commits qui sont pas en retard
+			
+			
+			//$reponse2 = $bdd->query('Select * from ((Select Sum(effort) as prevu from UserStory where sprint_id = ' . $id . ')as effort_prevu, (Select Sum(effort)as reel from UserStory where sprint_id = ' . $id . ' and commit_id is not null)as effort_reel);');
+			
+			$reponse2 = $bdd->query('Select * from ((Select Sum(effort) as prevu from UserStory where sprint_id = ' . $id . ')as effort_prevu,(select reel, retard from ((Select Sum(effort) as reel from UserStory where sprint_id = ' .$id. ' and sprint_id_retard is null and commit_id is not null and bloque is null) as effort_reel,(Select Sum(effort) as retard from UserStory where sprint_id_retard = ' . $id . ' and commit_id is not null and bloque is null) as effort_retard))as effort_total);');
+			
             $donnees2 = $reponse2->fetch();
-            //Calcul de l'effort prévu
+			
+			//Calcul de l'effort prévu
             $effort = $donnees2['prevu'];
             $restePrevu = (int)$restePrevu-(int)$effort;
-
+			
             $idealArray[] = (int)$restePrevu;
             $idealXArray[] = 'Sprint'.strval($i);
 			
 			//Calcul de l'effort réel
-            $effortReel = $donnees2['reel'];
+            $effortReel = ((int)$donnees2['reel'] + (int)$donnees2['retard']);
             if((int)$effortReel != 0){
                 $resteReel = (int)$resteReel-(int)$effortReel;
-                $actualArray[] = (int)$resteReel;
             }
-
+			$actualArray[] = (int)$resteReel;
         }
-
-
         ?>
 
 </form>
@@ -113,11 +117,13 @@ session_start();
 	
 	<section id="pert_section">
 		<h2>PERT</h2>
+	<div class = "partie">
+		<h3>Matrice de d&eacute;pendances</h3>
 		<?php
 			include("Handlers/tasks/tasks_requests.php");
 			$sprints_array = get_sprints($_SESSION['projet_id']);	
 			$sprints = $sprints_array['sprints'];
-			$sprints_numbers = $sprints_array['numbers'];	
+			$sprints_numbers = $sprints_array['numbers'];				
 			
 			foreach($sprints_numbers as $sn){	
 				echo '<button type="button" class="button_sprint_pert" data-sprint="'.$sn.'">Sprint '.$sn.'</button>';
@@ -168,22 +174,29 @@ session_start();
 				
 		?>
 	</section>
+	<section id ="pert_diagramme">
+	 <iframe src="pert.php"></iframe> 
+	</section>
+</div>
 </body>
 </html>
 
 <script>
 
-    function edit_click(no) {
-
-        document.getElementById("edit-ic" + no).style.display = "none";
-        document.getElementById("label-ic" + no).style.display = "none";
-        document.getElementById("save-ic" + no).style.display = "block";
-        document.getElementById("text-ic" + no).style.display = "block";
-        document.getElementById("save-ic" + no).style.float = "right";
-        document.getElementById("text-ic" + no).style.float = "left";
-        document.getElementById("text-ic" + no).style.textAlign = "center";
-        document.getElementById("save-ic" + no).style.width ="18%";
-        document.getElementById("text-ic" + no).style.width ="82%";
+    function edit_click(no, id) {
+		if(id != 1){
+			document.getElementById("edit-ic" + no).style.display = "none";
+			document.getElementById("label-ic" + no).style.display = "none";
+			document.getElementById("save-ic" + no).style.display = "block";
+			document.getElementById("text-ic" + no).style.display = "block";
+			document.getElementById("save-ic" + no).style.float = "right";
+			document.getElementById("text-ic" + no).style.float = "left";
+			document.getElementById("text-ic" + no).style.textAlign = "center";
+			document.getElementById("save-ic" + no).style.width ="18%";
+			document.getElementById("text-ic" + no).style.width ="82%";
+		}else{
+			alert('Vous n\'avez pas l\'authorisation de modifier ces informations');
+		}
     }
 
     function save_click(no)
