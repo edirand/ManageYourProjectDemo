@@ -41,10 +41,12 @@ body{
 
 #s1{
 	background-color : #ecf0f1;
+	
 }
 .secteur{
 	height : 500px;
 	width : 100%;
+	border-bottom : 1px solid rgba(0,0,0, 0.3);
 }
 
 .text-left{
@@ -53,15 +55,15 @@ body{
 }
 
 .text-left .title{
-	font-size : 30px;
+	font-size : 40px;
 	margin-top : 80px;
 	margin-left : 80px;
 }
 
 .text-left .desc{
-	margin-top : 20px;
+	margin-top : 30px;
 	margin-left :80px;
-	font-size : 16px;
+	font-size : 20px;
 }
 
 .text-left .bouton{
@@ -70,7 +72,6 @@ body{
 	width : 20%;
 	margin-left : 250px;
 	text-align : center;
-	border : 1px solid black;
 	background-color : #1abc9c;
 	border-radius : 10px;
 	color : white;
@@ -125,16 +126,16 @@ body{
 	margin-right : 100px;
 }
 #s3 .text-right{
-	width : 70%;
+	width : 63%;
 }
 
 #s3 .text-left{
-	width : 25%;
+	width : 35%;
 }
 
 #s3-et{
-	float : center;
 	margin-bottom : 30px;
+	vertical-align : middle;
 }
 
 #s4 .text-left{
@@ -142,7 +143,7 @@ body{
 }
 
 #s4 .text-right{
-	width : 25%;
+	width : 30%;
 	padding-right : 50px;
 }
 
@@ -188,3 +189,58 @@ body{
 	z-index : 1000;
 }
 
+#equipe{
+	background-color : #2C3E50;
+	height : 200px;
+}
+
+#foot{
+	height : 150px;
+	text-align : center;
+}
+
+#foot-titre{
+	margin-top : 20px;
+	font-size : 30px;
+	color :#37474F
+}
+
+#foot .bouton{
+	margin-left : 39%;
+	margin-top : 20px;
+	padding : 10px;
+	width : 20%;
+	text-align : center;
+	background-color : #1abc9c;
+	border-radius : 10px;
+	color : white;
+	cursor : pointer;
+}
+
+#equipe .col{
+	text-align : center;
+	vertical-align : top;
+	margin-top : 30px;
+	margin-left : 35px;
+	display : inline-block;
+	width : 30%;
+	color : white;
+	height : 100%;
+}
+
+#equipe .col .title{
+	text-align : center;
+	vertical-align : top;
+}
+
+#equipe .col a{
+	text-align : center;
+	color : white;
+	text-decoration : none;
+	margin-top : 20px;
+	display : block;
+}
+
+#equipe .col .desc {
+	margin-top : 20px;
+}

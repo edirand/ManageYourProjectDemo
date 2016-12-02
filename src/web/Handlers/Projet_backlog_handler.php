@@ -11,7 +11,9 @@
 	
 	echo '<div class = "title">Backlog du projet</div>';
 	echo '<div class = "back">';
-	echo '<a href="Modif_Backlog.php""><img src="Icons/pencil.png" width = "30px" class="imgMod"></img></a>';
+	if($_SESSION['user_session'] !=1){
+		echo '<a href="Modif_Backlog.php""><img src="Icons/pencil.png" width = "30px" class="imgMod"></img></a>';
+	}
 	echo '<table id = "b">';
 	echo '<tr id = "first"><td>US#</td><td>Description</td><td>Effort</td><td>Priorité</td><td>Sprint</td></tr>';
 	while ($donnees = $reponse->fetch())

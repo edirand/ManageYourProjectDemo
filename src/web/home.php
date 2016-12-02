@@ -17,19 +17,19 @@
 		<div class = "text-left">
 			<div class = "title">Gérez efficacement vos projets de développement !</div>
 			<div class = "desc">Manage Your Project vous offre un outil complet pour organiser de A à Z votre projet.</div>
-			<div class = "bouton" href = "#" onclick="window.location.href='sign-up.php'">Go</div>
+			<div class = "bouton" href = "#" onclick="window.location.href='sign-up.php'">Lancez-vous !</div>
 		</div>
 		<div class = "text-right">
 			<div class = "point">
-				<div class = "image"><img src = "img/list.png"></img></div>
+				<div class = "image"><img src = "img/list.png" width = "64px"></img></div>
 				<div class = "text">Organisez vos tâches en un clin d'oeil</div>
 			</div>
 			<div class = "point">
-				<div class = "image"><img src = "img/share.png"></img></div>
+<div class = "image"><img src = "img/share.png" width ="64px"></img></div>
 				<div class = "text">Gérez simplement votre équipe et les tâches à accomplir</div>
 			</div>
 			<div class = "point">
-				<div class = "image"><img src = "img/chart.png"></img></div>
+				<div class = "image"><img src = "img/chart.png" width = "64px"></img></div>
 				<div class = "text">Visualisez facilement votre avancée</div>
 			</div>
 		</div>
@@ -51,7 +51,7 @@
 		<div class = "text-right">
 			<div class = "entete"><img id = "s3-et" class = "im-entete" src = "img/share.png"></img>
 				<div id="s3-et" class = "entete-title">Gestion intuitive de l'équipe</div>
-				<div class = "im"><img src="img/im2.png" width = "700px"></img></div>
+				<div class = "im"><img src="img/im2.png" width = "650px"></img></div>
 			</div>
 		</div>
 		<div class = "text-left">
@@ -70,6 +70,33 @@
 	<div class = "text-right">
 		<div class = "s-title">Visualisez l'avancement du projet.</div><div class="s-desc">Les outils statistiques vous permettent de voir directement où vous en êtes</div>
 	</div>
+	</div>
+
+	<div class = "secteur" id = "foot">
+		<div id = "foot-titre">Découvrez une nouvelle façon de gérer vos projets.</div>
+		<div class = "bouton" href = "#" onclick="window.location.href='sign-up.php'">Lancez-vous !</div>
+	</div>
+	<div class = "secteur" id = "equipe">
+		<div class = "col">
+			<div class="title">Équipe</div>
+			<div class = "user">
+				<img class="photo" src=""></img>
+				<div class = "nom">Émilien Dirand</div>
+			</div>
+			<div class = "user">
+				<img class="photo" src=""></img>
+				<div class = "nom">Laala Djelouah</div>
+			</div>
+			<div class = "user">
+				<img class="photo" src=""></img>
+				<div class = "nom">Samuel Laveau</div>
+			</div>
+		</div>
+<div class = "col"><div class="title">Raccourcis</div>
+<a class = "lien" href="#" onclick="window.location.href='sign-up.php'">Inscription</a> <a class="lien" href="#" onclick="window.location.href='login.php'">Se connecter</a>
+</div>
+<div class = "col"><div class="title">ManageYourProject</div><div class= "desc"> Manage Your Project a été développé dans le cadre de l'UE Conduite de Projet.</div>
+</div>
 	</div>
 </body>
 
