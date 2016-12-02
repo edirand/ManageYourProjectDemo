@@ -1,0 +1,190 @@
+/*************************************************/
+/* Gère la bannière de la page d'accueil *********/
+/*************************************************/
+body{
+	margin : 0;
+	padding : 0;
+	font-family: 'Roboto', sans-serif;
+}
+.banner{
+	display : block;
+	width : 100%;
+	height : 50px;
+}
+
+.logo{
+	display : inline-block;
+	margin-left : 60px;
+	margin-top : 8px;
+}
+
+.banner .menu{
+	display : inline-block;
+	float : right;
+	margin-top : 15px;
+	margin-right : 140px;
+}
+.banner .lien{
+	display : inline-block;
+	float : right;
+	margin-right : 40px;
+	text-decoration : none;
+	color : #37474F;
+}
+
+/*************************************************/
+/* Corps de la page d'accueil *********/
+/*************************************************/
+#s2{
+	background-color : #fbfcfc;
+}
+
+#s1{
+	background-color : #ecf0f1;
+}
+.secteur{
+	height : 500px;
+	width : 100%;
+}
+
+.text-left{
+	display : inline-block;
+	width : 45%;
+}
+
+.text-left .title{
+	font-size : 30px;
+	margin-top : 80px;
+	margin-left : 80px;
+}
+
+.text-left .desc{
+	margin-top : 20px;
+	margin-left :80px;
+	font-size : 16px;
+}
+
+.text-left .bouton{
+	margin-top : 20px;
+	padding : 10px;
+	width : 20%;
+	margin-left : 250px;
+	text-align : center;
+	border : 1px solid black;
+	background-color : #1abc9c;
+	border-radius : 10px;
+	color : white;
+	cursor : pointer;
+}
+
+.text-right{
+	display : inline-block;
+	width : 45%;
+	float : right;
+	margin-top : 30px;
+	color : #1abc9c;
+}
+
+.text-right .point{
+	float : right;
+	width : 90%;
+	margin-top : 20px;
+}
+
+.text-right .point .image{
+	display : inline-block;
+	vertical-align : middle;
+	width : 64px;
+	margin-right : 20px;
+}
+
+.text-right .point .text{
+	display : inline-block;
+	width : 60%;
+	
+}
+.entete{
+	margin-left : 60px;
+	margin-top : 30px;
+}
+.im-entete{
+	display : inline-block;
+	width : 50px;
+	vertical-align : middle;
+	margin-right : 20px;
+
+}
+.entete-title{
+	display : inline-block;
+	font-size : 25px;
+	color : #37474F;
+}
+
+#s2 .text-right{
+	width : 35%;
+	margin-right : 100px;
+}
+#s3 .text-right{
+	width : 70%;
+}
+
+#s3 .text-left{
+	width : 25%;
+}
+
+#s3-et{
+	float : center;
+	margin-bottom : 30px;
+}
+
+#s4 .text-left{
+	width : 60%;
+}
+
+#s4 .text-right{
+	width : 25%;
+	padding-right : 50px;
+}
+
+
+#s4{
+	background-color : #fbfcfc;
+}
+
+#s1 .text-right{
+	margin-top : 80px;
+}
+.text-right .s-title{
+	width : 80%;
+	margin-top : 140px;
+	margin-left : 60px;
+	color : #37474F;
+	font-size : 25px;
+	z-index : 1000;
+}
+
+.text-right .s-desc{
+	margin-left : 60px;
+	margin-top : 40px;
+	color : #8c9899;
+	font-size : 16px;
+	z-index : 1000;
+}
+
+.text-left .s-title{
+	width : 80%;
+	margin-top : 140px;
+	margin-left : 60px;
+	color : #37474F;
+	font-size : 25px;
+	z-index : 1000;
+}
+
+.text-left .s-desc{
+	margin-left : 60px;
+	margin-top : 40px;
+	color : #8c9899;
+	font-size : 16px;
+	z-index : 1000;
+}
+
